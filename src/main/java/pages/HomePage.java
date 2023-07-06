@@ -15,6 +15,7 @@ public class HomePage extends BasePage {
     private static final By SIGNUP_LOGIN_BUTTON = By.cssSelector("i.fa.fa-lock");
     private static final By TEST_CASES_BUTTON = By.xpath("//li//child::a[contains(text(),' Test Cases')]");
     private static final By CONTACT_US_BUTTON = By.cssSelector("i.fa.fa-envelope");
+    private static final By PRODUCTS_BUTTON = By.xpath("//li//child::a[contains(text(),' Products')]");
     JavascriptExecutor js = (JavascriptExecutor) driver;
 
     public HomePage(WebDriver driver) {
@@ -46,10 +47,16 @@ public class HomePage extends BasePage {
                 driver.findElement(By.xpath("//h2[@data-qa='account-deleted']/b[text()='Account Deleted!']")).isDisplayed());
     }
 
-    public void clickOnTestCasesButton(){clickOnWebElement(TEST_CASES_BUTTON);}
+    public void clickOnTestCasesButton() {
+        clickOnWebElement(TEST_CASES_BUTTON);
+    }
 
-    public void clickOnContactUsButton(){clickOnWebElement(CONTACT_US_BUTTON);}
+    public void clickOnContactUsButton() {
+        clickOnWebElement(CONTACT_US_BUTTON);
+    }
 
-
+    public void clickOnProductsButton() {
+        clickOnWebElement(PRODUCTS_BUTTON);
+    }
 
 }
