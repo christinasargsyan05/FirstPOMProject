@@ -16,6 +16,8 @@ public class HomePage extends BasePage {
     private static final By TEST_CASES_BUTTON = By.xpath("//li//child::a[contains(text(),' Test Cases')]");
     private static final By CONTACT_US_BUTTON = By.cssSelector("i.fa.fa-envelope");
     private static final By PRODUCTS_BUTTON = By.xpath("//li//child::a[contains(text(),' Products')]");
+    private static final By SUBSCRIPTION_EMAIL_INPUT = By.cssSelector("input[type=email]");
+    private static final By SUBSCRIBE_BUTTON = By.cssSelector("button#subscribe");
     JavascriptExecutor js = (JavascriptExecutor) driver;
 
     public HomePage(WebDriver driver) {
@@ -58,5 +60,16 @@ public class HomePage extends BasePage {
     public void clickOnProductsButton() {
         clickOnWebElement(PRODUCTS_BUTTON);
     }
+
+    public void enterTheEmailInSubscriptionInputField(String subscriptionEmail){
+        enterText(SUBSCRIPTION_EMAIL_INPUT,subscriptionEmail);
+    }
+
+    public void clickOnSubscribeButton(){clickOnWebElement(SUBSCRIBE_BUTTON);}
+
+    public void isSuccessMessageDisplayed(){
+        System.out.println("Success message is displayed -- " + driver.findElement(By.cssSelector("div#success-subscribe")).isDisplayed());
+    }
+
 
 }

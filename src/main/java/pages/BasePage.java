@@ -8,6 +8,7 @@ import org.openqa.selenium.interactions.Actions;
 
 import java.time.Duration;
 
+import static java.awt.SystemColor.window;
 import static utils.WaitUtil.waitForElementLocatedByBecomeClickable;
 
 public class BasePage {
@@ -45,5 +46,11 @@ public class BasePage {
     public static WebElement getWebElement(By by, WebDriver driver){
         return driver.findElement(by);
     }
+
+    public void scrollToThePageFooter(){
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0,document.body.scrollHeight)", "");
+    }
+
 }
 
