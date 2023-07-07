@@ -15,6 +15,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import pages.AllProductsPage;
 import pages.HomePage;
+import pages.SpecificProductPage;
+
 
 public class TestCase8 {
     public static void main(String[] args) {
@@ -34,5 +36,22 @@ public class TestCase8 {
         AllProductsPage allProductsPage = new AllProductsPage(driver);
 
         allProductsPage.isAllProductsTextVisible();
+
+        allProductsPage.clickOnFirstProduct();
+
+        SpecificProductPage specificProductPage = new SpecificProductPage(driver);
+
+        specificProductPage.isProductNameDisplayed();
+
+        specificProductPage.isCategoryDisplayed();
+
+        specificProductPage.isPriceDisplayed();
+
+        specificProductPage.isAvailabilityDisplayed();
+
+        specificProductPage.isConditionDisplayed();
+
+        specificProductPage.isBrandDisplayed();
+
     }
 }

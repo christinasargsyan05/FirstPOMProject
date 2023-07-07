@@ -42,6 +42,8 @@ public class BasePage {
     }
 
 
-
+    public static WebElement getWebElement(By by, WebDriver driver){
+        return driver.findElement(by);
+    }
 }
 
