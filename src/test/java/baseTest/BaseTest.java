@@ -3,6 +3,7 @@ package baseTest;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterTest;
 
 public class BaseTest {
 
@@ -15,4 +16,10 @@ public class BaseTest {
         driver.get("https://automationexercise.com/");
 
     }
+
+    //@AfterTest
+    public static void closeDriver(){
+        driver.close();
+    }
+
 }

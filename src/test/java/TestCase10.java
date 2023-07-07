@@ -7,11 +7,13 @@ Test Case 10: Verify Subscription in home page
 5. Verify text 'SUBSCRIPTION'
 6. Enter email address in input and click arrow button
 7. Verify success message 'You have been successfully subscribed!' is visible
-* */
+*/
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import pages.HomePage;
+
+import static baseTest.BaseTest.closeDriver;
 
 public class TestCase10 {
     public static void main(String[] args) {
@@ -30,6 +32,8 @@ public class TestCase10 {
         homePage.clickOnSubscribeButton();
 
         homePage.isSuccessMessageDisplayed();
+
+        closeDriver();
 
 
     }
